@@ -1,28 +1,18 @@
   <html>
         <head>
-            <title>TESTESTTESTESTTESTESTTESTESTTESTEST</title>
+            <title>Blog</title>
         </head>
         <body>
-            <div>
-                <h1><a href="">Blog</a></h1>
-            </div>
+           <div>
+        <h1><a href="/">Django Blog</a></h1>
+    </div>
 
-            <div>
-                <p>TIME TO RUN</p>
-                <h2><a href="">My first post</a></h2>
-                <p>
-                Костян дуралей
-
-                 <p/>
-
-            </div>
-
-            <div>
-                <p>TESTTESTTEST</p>
-                <h2><a href="">My second post</a></h2>
-                <p>
-                    Катюха бармалей
-                </p>
-            </div>
+            {% for post in posts %}
+                <div>
+                    <p>published: {{ post.published_date }}</p>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
         </body>
     </html>
